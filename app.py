@@ -28,6 +28,7 @@ def get_prediction(input_problem):
     )
 
     prediction = tokenizer.decode(output_ids[0],skip_special_tokens=True)
+    prediction = prediction.split("ANSWER:\n")[1]
     return escape(prediction)
 
 @app.route('/', methods=['GET'])
@@ -41,7 +42,7 @@ def predict():
         coding_problem = request.form.get('coding_problem')
         if coding_problem is not None:
             prediction = get_prediction(coding_problem)
-            return render_template('index.html', generatedAnswer=prediction)
+            return render_template('index.html', generatedAnswer=prediction, question=coding_problem)
 
 
 if __name__ == '__main__':
