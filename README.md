@@ -5,7 +5,7 @@ A very simple website developed with help of flask where users can enter coding 
 ## Install Dependencies
 
 ```bash
-pip install requirements.txt
+pip install -r requirements.txt
 ```
 
 ## Download Fine-Tuned Models

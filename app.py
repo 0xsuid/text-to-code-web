@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 tokenizer = AutoTokenizer.from_pretrained("EleutherAI/gpt-neo-125M")
 tokenizer.pad_token = tokenizer.eos_token
-model = AutoModelForCausalLM.from_pretrained("./model")
+model = AutoModelForCausalLM.from_pretrained("0xsuid/GPT-Neo-125M")
 model.resize_token_embeddings(len(tokenizer))
 
 def format_input(input_problem):
